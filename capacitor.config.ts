@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'pokemol',
+  appId: 'it.unimol.pokedex',
+  appName: 'PokéDex',
   webDir: 'www',
   bundledWebRuntime: false
 };

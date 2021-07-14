@@ -1,0 +1,44 @@
+<ion-header color=primary [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/home']" routerDirection="back">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>PokéDex</ion-title>
+
+    <ion-buttons slot="secondary">
+      <ion-button (click)="this.search = !this.search">
+        <ion-icon *ngIf="this.search === false" name="search-outline"></ion-icon>
+        <ion-icon *ngIf="this.search === true" name="list"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="this.refreshList($event)" slot="fixed">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-searchbar *ngIf="this.search === true" (ionInput)="this.filterList($event)"></ion-searchbar>
+
+  <ion-list *ngIf="this.getList().length > 0">
+    <ion-item *ngFor="let pokemon of this.getList()" [routerLink]="['/sheet', pokemon.id]" button="true" detail="true">
+      <ion-thumbnail>
+        <ion-img src="{{ pokemon.avatar }}"></ion-img>
+      </ion-thumbnail>
+
+      <ion-grid>
+        <ion-row>
+          <ion-label class="id">#{{ pokemon.id.toString().padStart(3, '0') }}</ion-label>
+        </ion-row>
+
+        <ion-row>
+          <ion-label class="name">{{ pokemon.name }}</ion-label>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>

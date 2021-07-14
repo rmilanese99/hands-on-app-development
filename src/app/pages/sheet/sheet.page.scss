@@ -1,0 +1,73 @@
+.hp {
+  background: lightgreen;
+}
+
+.attack {
+  background: lightyellow;
+}
+
+.defense {
+  background: lightsalmon;
+}
+
+.special-attack {
+  background: lightseagreen;
+}
+
+.special-defense {
+  background: lightblue;
+}
+
+.speed {
+  background: lightcoral;
+}
+
+#header {
+  border-bottom: 1px solid #7D7D7D;
+}
+
+ion-card {
+  margin: 3vh auto 3vh auto;
+
+  width: 85vw;
+}
+
+ion-card-title {
+  font-size: x-large;
+}
+
+ion-chip {
+  margin: auto 10px 3vh -2px;
+}
+
+ion-col {
+  color: #2A2A2A;
+
+  font-size: larger;
+}
+
+ion-img {
+  margin: auto;
+
+  max-width: 256px;
+}
+
+ion-label {
+  display: block;
+
+  margin-bottom: 1vh;
+}
+
+ion-text {
+  display: block;
+
+  font-size: larger;
+
+  margin-bottom: 3vh;
+}
+
+ion-grid {
+  margin-bottom: 2vh;
+
+  padding-bottom: 2vh;
+}

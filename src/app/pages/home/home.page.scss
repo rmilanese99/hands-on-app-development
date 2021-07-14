@@ -25,3 +25,29 @@
 #container a {
   text-decoration: none;
 }
+
+ion-card {
+  width: 80vw;
+
+  margin: 2vh auto auto;
+}
+
+ion-card-header {
+  border-bottom: 1px solid #7D7D7D;
+
+  margin-bottom: 2vh;
+}
+
+ion-button {
+  height: 3em;
+
+  font-size: medium;
+
+  margin-bottom: 2vh;
+}
+
+#logo {
+  height: 25vh;
+
+  margin-top: 2vh;
+}

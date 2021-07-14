@@ -1,0 +1,59 @@
+<ion-header color=primary [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/list']" routerDirection="back">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>PokéDex</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-grid id="header">
+      <ion-row class="ion-align-items-center">
+        <ion-col>
+          <ion-img src="{{ this.pokemon.avatar }}"></ion-img>
+        </ion-col>
+
+        <ion-col>
+          <ion-card-header>
+            <ion-card-title>{{ this.pokemon.name }}</ion-card-title>
+            <ion-card-subtitle>#{{ this.pokemon.id.toString().padStart(3, '0') }}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-card-content>
+      <ion-label>Descrizione</ion-label>
+      <ion-text>{{ this.pokemon.description }}</ion-text>
+
+      <ion-label>Tipo</ion-label>
+      <ion-chip *ngFor="let type of this.pokemon.type" color="primary" outline="true">{{ type }}</ion-chip>
+
+      <ion-label>Statistiche</ion-label>
+      <ion-grid class="ion-text-center">
+        <ion-row>
+          <ion-col class="hp">PS</ion-col>
+          <ion-col class="attack">Att.</ion-col>
+          <ion-col class="defense">Dif.</ion-col>
+          <ion-col class="special-attack">Att. Sp.</ion-col>
+          <ion-col class="special-defense">Dif. Sp.</ion-col>
+          <ion-col class="speed">Vel.</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col class="hp">{{ this.pokemon.stats.hp }}</ion-col>
+          <ion-col class="attack">{{ this.pokemon.stats.attack }}</ion-col>
+          <ion-col class="defense">{{ this.pokemon.stats.defense }}</ion-col>
+          <ion-col class="special-attack">{{ this.pokemon.stats.specialAttack }}</ion-col>
+          <ion-col class="special-defense">{{ this.pokemon.stats.specialDefense }}</ion-col>
+          <ion-col class="speed">{{ this.pokemon.stats.speed }}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

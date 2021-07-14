@@ -1,0 +1,26 @@
+<ion-header color=primary [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>PokéDex</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center">
+  <ion-img id="logo" src="assets/media/not-found.png"></ion-img>
+
+  <ion-label id="title">Non sappiamo cosa stessi cercando...</ion-label>
+  <ion-label>... ma comunque non l'abbiamo trovato!</ion-label>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col class="ion-text-center">
+        <ion-button [routerLink]="['/home']" shape="round" strong="true">
+          <ion-icon name="home"></ion-icon>
+
+          <ion-label>Torna alla home</ion-label>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
